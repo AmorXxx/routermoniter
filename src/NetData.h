@@ -82,14 +82,14 @@ void parseNetDataResponse(WiFiClient &client, NetChartData &data)
  * 从软路由NetData获取监控信息
  * ChartID:
  *  system.cpu - CPU占用率信息
- *  sensors.temp_thermal_zone0_thermal_thermal_zone - CPU 温度信息
+ *  sensors.sensors.temp_thermal_zone1_thermal_thermal_zone1 - CPU 温度信息
  */
 
 bool getNetDataInfoWithDimension(String chartID, NetChartData &data, String dimensions_filter)
 {
-    const char *NETDATA_HOST = "192.168.100.1";
+    const char *NETDATA_HOST = "192.168.1.1";
     int NETDATA_PORT = 19999;
-    // String reqRes = "/api/v0/data?chart=sensors.temp_thermal_zone0_thermal_thermal_zone0&format=json&points=9&group=average&gtime=0&options=s%7Cjsonwrap%7Cnonzero&after=-10";
+    // String reqRes = "/api/v0/data?chart=sensors.sensors.temp_thermal_zone1_thermal_thermal_zone10&format=json&points=9&group=average&gtime=0&options=s%7Cjsonwrap%7Cnonzero&after=-10";
     String reqRes = "/api/v1/data?chart=" + chartID + "&format=array&points=9&group=average&gtime=0&options=s%7Cjsonwrap%7Cnonzero&after=-2";
     reqRes = reqRes + "&dimensions=" + dimensions_filter;
 
