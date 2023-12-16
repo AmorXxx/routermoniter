@@ -8,3 +8,4 @@
 
 test/
 ui-design/
+.pio/build/nodemcuv2/idedata.json

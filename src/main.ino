@@ -7,9 +7,9 @@
 
 using namespace std;
 
-const char *ssid = "#";         // 连接WiFi名（此处使用taichi-maker为示例）
-                                    // 请将您需要连接的WiFi名填入引号中
-const char *password = "#"; // 连接WiFi密码（此处使用12345678为示例）
+const char *ssid = "Amor";         // 连接WiFi名（此处使用taichi-maker为示例）
+                               // 请将您需要连接的WiFi名填入引号中
+const char *password = "www708626"; // 连接WiFi密码（此处使用12345678为示例）
 
 // extern lv_font_t my_font_name;
 LV_FONT_DECLARE(tencent_w7_22)
@@ -179,7 +179,7 @@ void getMemoryUsage()
         Serial.print("Memory Available: ");
         Serial.println(String(netChartData.max).c_str());
 
-        mem_usage = 100 * (1.0 - netChartData.max / 4096.0);
+        mem_usage = 100 * (1.0 - netChartData.max / 8192.0);
     }
 }
 
@@ -240,7 +240,7 @@ void getNetworkSent()
 
 void getTemperature()
 {
-    if (getNetDataInfo("sensors.temp_thermal_zone1_thermal_thermal_zone1", netChartData))
+    if (getNetDataInfo("sensors.acpitz-acpi-0_temperature", netChartData))
     {
         Serial.print("Temperature: ");
         Serial.println(String(netChartData.max).c_str());
